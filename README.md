@@ -9,13 +9,14 @@ This package provides an integrated pipeline for modeling, simulating, optimizin
 
 ```
 project-root/
-├── config/                     # Study definitions, system configuration, and parameter files
-├── PipelineOrchestrator/       # Main pipeline execution script
-├── DispatchOptimisation/      # Pyomo-based optimization module
-├── KPI_Evaluation/            # Post-processing and KPI computation
-├── log_data/                  # Output logs and results (auto-generated)
-├── IntegrationModel/          # Simulink model and scenario executables
-├── requirements.txt           # Python package dependencies
+├── HES-REC-RC__Info/           # Running instruction and requiremet.txt
+├── HES-REC-RC_config/          # Study definitions, system configuration, and parameter files
+├── HES-REC-RC_PipelineOrchestrator/       # Main pipeline execution script
+├── HES-REC-RC_DispatchOptimisation/      # Pyomo-based optimization module
+├── HES-REC-RC_KPI_Evaluation/            # Post-processing and KPI computation
+├── HES-REC-RC_log_data/                  # Output logs and results (auto-generated)
+├── HES-REC-RC_IntegrationModel/          # Simulink model and scenario executables
+├── HES-REC-RC_requirements.txt           # Python package dependencies
 ```
 
 ---
@@ -58,7 +59,7 @@ project-root/
 
 3. **Run the pipeline**
    ```
-   python PipelineOrchestrator/PipelineDispatcher.py
+   python HES-REC-RC_PipelineOrchestrator/PipelineDispatcher.py
    ```
 ---
 
@@ -99,5 +100,5 @@ Each pipeline run creates a timestamped folder inside `log_data/`:
 
 - This package is modular: scenario generation, simulation, optimization, and KPI evaluation.
 - MATLAB must be accessible via command line for simulation to run correctly.
-- The consistency between Simulink and optimization configuration modules are implemented using translation dictionaries in the `config/` folder.
+- The consistency between Simulink and optimization configuration modules are implemented using translation dictionaries in the `HES-REC-RC_config/` directory.
 - For more information, refer to the README files in each directory
