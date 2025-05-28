@@ -6,11 +6,13 @@ This package provides an integrated pipeline for modeling, simulating, optimizin
 ---
 
 ## 📦 Repository Structure
+First, download or clone the entire project repository. The folder structure should look like this:
+
 
 ```
 project-root/
 ├── HES-REC-RC__Info/           # Running instruction and requiremet.txt
-├── HES-REC-RC_config/          # Study definitions, system configuration, and parameter files
+├── HES-REC-RC_ConfigInput/          # Study definitions, system configuration, and parameter files
 ├── HES-REC-RC_PipelineOrchestrator/       # Main pipeline execution script
 ├── HES-REC-RC_DispatchOptimisation/      # Pyomo-based optimization module
 ├── HES-REC-RC_KPI_Evaluation/            # Post-processing and KPI computation
@@ -46,18 +48,22 @@ project-root/
 ## 🚀 How to Run the Pipeline
 
 1. **Configure your study**  
-   Edit `config/Study_difinition_Soria.yaml` or `Study_difinition_Portici.yaml`.
+(Optional):
+   Edit `config/Study_definition_Soria.yaml` or `Study_definition_Portici.yaml`.
    Configuration default for optimisation module also can be edited through `Config_Opt.xlsx`
-   Configuration default for simulink module also can be edited through `config_simulation_Portigi.xlsx` or `config_simulation_Soria.xlsx`
+   Configuration default for simulink module also can be edited through `config_simulation_Portici.xlsx` or `config_simulation_Soria.xlsx`
 
 2. **Select the study in the dispatcher**  
    Open `PipelineOrchestrator/PipelineDispatcher.py` and toggle between:
    ```python
-   # dispatcher = PipelineDispatcher(study_file_Nm="Study_difinition_Portici")
-   dispatcher = PipelineDispatcher(study_file_Nm="Study_difinition_Soria")
+   # dispatcher = PipelineDispatcher(study_file_Nm="Study_definition_Portici")
+   dispatcher = PipelineDispatcher(study_file_Nm="Study_definition_Soria")
    ```
 
 3. **Run the pipeline**
+To execute the pipeline, navigate to the `HES-REC-RC_PipelineOrchestrator` repository location and run the following command:
+
+Edit
    ```
    python HES-REC-RC_PipelineOrchestrator/PipelineDispatcher.py
    ```
@@ -100,5 +106,5 @@ Each pipeline run creates a timestamped folder inside `log_data/`:
 
 - This package is modular: scenario generation, simulation, optimization, and KPI evaluation.
 - MATLAB must be accessible via command line for simulation to run correctly.
-- The consistency between Simulink and optimization configuration modules are implemented using translation dictionaries in the `HES-REC-RC_config/` directory.
+- The consistency between Simulink and optimization configuration modules are implemented using translation dictionaries in the `HES-REC-RC_ConfigInput/` directory.
 - For more information, refer to the README files in each directory
